@@ -28,3 +28,19 @@ Clone the repository, make sure you have npm (npm install), and run "npm run dev
  - Your local repository is stored on your computer and only seen by you, while the remote repository is connected to GitHub
    and stored on a server. Multiple people can interact with the remote repository, but only you can interact with your local
    one. 
+
+
+**Milestone 2 Quiz**
+1. What does `display: flex` do?
+ - This allows you to dynamically style the child elements of the parent container which has the flex styling. 
+   In this example, we use it so that we can make the webpage dynamic when the size changes. 
+2. What is a media query?
+  - A media query lets us apply a style only under certain conditions. For example, a style may only be applied
+    when the webpage is under a certain width. 
+3. Why should responsive design be handled in CSS, not JavaScript?
+  - CSS is meant to handle styling. In JS, we would have to use event listeners which are clunkier and slower. We should
+    save those for things like button presses and form submits rather than page-idth changes. 
+4. What happens if media query is placed before base styles? 
+  - Because of the cascade rule, the later styles will override the media query and it will never be enacted, 
+    even if its condition is met. 
+
