@@ -9,10 +9,12 @@ const app = Vue.createApp({
             return marked.parse(this.message);
         },
         charCount() {
-            return this.htmlOutput.replace(/<[^>]*>/g, '').length;
+            let text = this.message; 
+            text = text.replace(/<[^>]*>/g, '');
+            return text.length;
         }
     }
-});
+})
 
 
 
