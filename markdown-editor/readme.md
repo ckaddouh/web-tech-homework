@@ -1,13 +1,13 @@
-Markdown Editor
+**Markdown Editor**
 
-Project description: 
+**Project description:**
 A simple markdown editor that takes markdown input and displays HTML output. 
 Uses Vue 3 marked.js. 
 
-How to run locally: 
+**How to run locally:** 
 Clone the repository, make sure you have npm (npm install), and run "npm run dev"
 
-Feature list:
+**Feature list:**
 - Textarea for Markdown input
 - Preview pane for HTML output with a live preview
 - See character count (excluding HTML tags)
@@ -15,6 +15,7 @@ Feature list:
 - Responsive (stacked mobile / split desktop)
 
 
+**Milestone 1 Quiz**
 1. What is the purpose of `git commit` ?
  - This takes your staged changes and "marks" them in your local history. It is a snapshot of your project at a particular
    point in time. 
