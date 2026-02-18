@@ -44,3 +44,26 @@ Clone the repository, make sure you have npm (npm install), and run "npm run dev
   - Because of the cascade rule, the later styles will override the media query and it will never be enacted, 
     even if its condition is met. 
 
+
+**Milestone 3 Quiz**
+1. What is the difference between `data` and `computed` in Vue?
+ - data stores values/attributes that can change while computed stores methods which compute values from other data
+2. Why should we not manipulate DOM manually in Vue?
+ - If we manipulated DOM manually in Vue, then Vue might not always realize we made a change and then overwrite that change. 
+   It also makes the code harder to follow, so it's best practice to change the state instead. 
+3. What does `v-html` do?
+ - v-HTML renders a string as real HTML instead of plain text, so it processes the HTML instead of just displaying the characters
+4. Why must we strip HTML before counting characters?
+ - Because there are many extra characters like <> and </> which should not be included in the character count. We only 
+   want to count characters of actual words. 
+
+**Milestone 4 Quiz**
+1. What is localStorage?
+ - localStorage is the system that lets us save key-value pairs in the user's browser (ex. how theme stays the same
+  even after page refresh)
+2. When does `mounted()` run?
+ - mounted runs after the Vue app is created and attached to the DOM
+3. What is a Vue watcher?
+ - A Vue watcher is a function that runs automatically when a specific data property changes
+4. Why should theme state also be persisted?
+ - Because if a user selects dark mode and refreshes, it should not suddenly turn back to light mode

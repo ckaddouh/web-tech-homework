@@ -19,8 +19,8 @@
         <textarea id="input" placeholder="Type here..." v-model="message"></textarea>  <!-- updates the message variable in vue js -->
         <div id="output" v-html="htmlOutput"></div>
         <div id="counter">{{charCount}}</div>
-        <span id="themeToggle" class="material-icons">
-        dark_mode
+        <span id="themeToggle" class="material-icons" @click="toggleTheme">
+            {{ theme === 'light' ? 'dark_mode' : 'light_mode' }}
         </span>
     </div>
     <script src="app.js"></script>
