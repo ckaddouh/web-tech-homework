@@ -16,12 +16,25 @@
 </head>
 <body>
     <div id="app" class="editor-container">
-        <textarea id="input" placeholder="Type here..." v-model="message"></textarea>  <!-- updates the message variable in vue js -->
-        <div id="output" v-html="htmlOutput"></div>
-        <div id="counter">{{charCount}}</div>
-        <span id="themeToggle" class="material-icons" @click="toggleTheme">
-            {{ theme === 'light' ? 'dark_mode' : 'light_mode' }}
-        </span>
+        <textarea id="input" placeholder="Type here..." v-model="message" v-if="showInput"></textarea>  <!-- updates the message variable in vue js -->
+        <div id="output" v-html="htmlOutput" v-if="showOutput"></div>
+        <div id="counter">{{charCount}} chars | {{wordCount}} words</div>
+
+        <div id="editorControls">
+            <span id="themeToggle" class="material-icons" @click="toggleTheme">
+                {{ theme === 'light' ? 'dark_mode' : 'light_mode' }}
+            </span>
+            <button id="inputButton" class="btn btn-sm btn-outline-primary" @click="toggleInput">
+                {{ showInput ? 'Hide Input' : 'Show Input' }}
+            </button>
+            <button id="outputButton" class="btn btn-sm btn-outline-primary" @click="toggleOutput">
+                {{ showOutput ? 'Hide Output' : 'Show Output' }}
+            </button>
+            <button id="clearBtn" class="btn btn-warning" @click="clearText">
+                Clear
+            </button>
+        </div>
+        
     </div>
     <script src="app.js"></script>
 </body>

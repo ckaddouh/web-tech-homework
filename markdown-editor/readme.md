@@ -67,3 +67,22 @@ Clone the repository, make sure you have npm (npm install), and run "npm run dev
  - A Vue watcher is a function that runs automatically when a specific data property changes
 4. Why should theme state also be persisted?
  - Because if a user selects dark mode and refreshes, it should not suddenly turn back to light mode
+
+
+**Final Reflection Quiz**
+1. How did you utilise AI to help you code the app, show some examples.
+ - I asked AI qualitative questions when I did not understand a section, or when I needed help debugging something. 
+   For example, in milestone 4, I first attempted to make the theme toggle watcher work on my own, but when I did not get 
+   the desired results, I asked AI how exactly a watcher works and where it should be placed in my app.js file. 
+2. What part of the build was most challanging?
+ - The most difficult part of the build was likely milestones 3 and 4, where I really had to implement Vue's reactivity system. 
+   Understanding the difference between the data, computed, and watch sections helped a lot. 
+3. What is the benefit of using a framework such as Vue for frontend development
+ - A framework like Vue makes your application more reactive to change and helps you persist changes across screen refreshes
+   and other events. For example, it lets you control the state of various parts of your app rather than directly editing the DOM. In addition, Vue only updates what changes and does not re-render your page each time, potentially making it faster. 
+
+
+**Bonuses Completed**
+- Clear button
+- Word counter
+- Hide/show input and output panes
