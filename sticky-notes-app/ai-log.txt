@@ -1,2 +1,6 @@
 Documenting any AI use in the project:
 
+In commit 3, I asked "How can I create a unique ID using crypto.randomUUID() if available and (Date.now() + Math.random())
+as a fallback? 
+
+Received: const newId = (crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now().toString() + Math.random().toString();
