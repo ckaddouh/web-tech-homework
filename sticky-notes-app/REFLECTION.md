@@ -1,0 +1,21 @@
+**Q1 - Reactivity**
+The character counter updates automatically when we type inside of the sticky notes because of Vue's reactivity system. The textarea in the sticky notes is bound to a Vue data property called stickie.text using v-model. As we saw in the last project as well, v-model lets us automatically update the text data property when someone types in a sticky note. Then, Vue's reactivity system detects that the text property has changed, and because our charCount function uses the text property to compute its result, Vue knows that it must update/call charCount when this value changes. It then updates the DOM and rerenders as well. 
+
+**Q2 - Deep Watch**
+deep: true allows us to watch items inside of the array, and not just the overall array. If we removed it, Vue's reactivity system wouldn't be able to detect changes in individual sticky notes, so charCount would stop working for individual stickies. Since it wouldn't ever call the saveToStorage() function, you would also lose your edits to individual stickies after refreshing the page. This only works because our data property above that the watcher is watching is really stickies[i].text, so it makes it so that we can have a watcher on each individual sticky note in the stickies array. If we removed the "deep: true" line, however, the add/delete note would still work because that is an edit to the overall array, and not to an individual element of the array. 
+
+**Q3 - localStorage**
+1. What type of data does localStorage store?
+localStorage stores data as key-value pairs of an ID to a String. Even though we are saving an array of stickies to our local storage, we must first "stringify" it. That is why we do: JSON.stringify(this.stickies). You also must assign it a unique storage key. 
+
+2. Why do we use `JSON.stringify()` when saving?
+We use `JSON.stringify()` when saving because localStorage only can store Strings. This function does the work for us of saving all of the properties of our array in some sort of unique String form. 
+
+3. What would happen if we forgot `JSON.parse()` when loading?
+If we forgot `JSON.parse()` when loading, I believe instead of our array of stickies displaying, a plain String would display. This is because our array is stored as some sort of String, and unless we parse that String to get back to the original elements, it will remain as a String. 
+
+**Q4 - Delete logic**
+The .filter() function returns a new array with potentially some elements missing. When you apply .filter(condition) to an array, it takes that array and applies some sort of condition to each element in that array. If the condition is true, that element remains in the new array. If the condition is false, that element is not included in the new array. Because this function returns a new array, we had to reassign it back to this.stickies. We use !== because the function only keeps elements for which the condition is true. We want to keep every element whose ID is **not** the ID of the sticky note we want to delete. This condition will only return false for that one intended note, and thus not include that note in the new filtered array. 
+
+**Q5 - Architecture Design**
+I believe we implemented in the saving in a separate method (saveToStorage) instead of putting it in the watcher because the code is more organized and easier to read this way. It separates the different actions in their respective places; there is a separate method for saving something to local storage, and a separate section for watching/observing changes in stickies. This is the watcher's main job, so it is cleaner to keep the saving storage in a separate function that we can just call from the watcher. If needbe, we could also call saveToStorage from another part of the code without having to rewrite code. And, if later we wanted to use sessionStorage instead of localStorage, we could easily make this change which would apply everywhere the function is used, rather than having to update each one individually and potentially forgetting one, leading to some bugs. 

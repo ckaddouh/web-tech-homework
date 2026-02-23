@@ -4,3 +4,8 @@ In commit 3, I asked "How can I create a unique ID using crypto.randomUUID() if 
 as a fallback? 
 
 Received: const newId = (crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now().toString() + Math.random().toString();
+
+
+In commit 4, I asked "What does the deep attribute do for a watcher in Vue?"
+
+Received: "Setting deep: true tells Vue to watch changes inside the objects and arrays, not just changes to the array itself."
